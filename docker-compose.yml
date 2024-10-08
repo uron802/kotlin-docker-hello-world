@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  kotlin-app:
+    build: .
+    container_name: kotlin-docker-hello-world
+    volumes:
+      - .:/app  # ローカルのコードをコンテナ内にマウント
+    ports:
+      - "8080:8080"  # 必要に応じてポートを指定
+    stdin_open: true  # コンテナが実行後に終了しないようにする
+    tty: true  # コンテナのインタラクティブセッションを維持する
